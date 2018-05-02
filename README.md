@@ -1,7 +1,7 @@
 # Solidity Project
 
 
-Code created using [Open Zeppelin (zeppelin-solidity)](https://github.com/OpenZeppelin/zeppelin-solidity) and [Truffle Framework](https://github.com/trufflesuite/truffle).
+Code created using [Open Zeppelin (openzeppelin-solidity)](https://github.com/OpenZeppelin/openzeppelin-solidity) and [Truffle Framework](https://github.com/trufflesuite/truffle).
 
  
  
@@ -11,9 +11,8 @@ Code created using [Open Zeppelin (zeppelin-solidity)](https://github.com/OpenZe
 Install truffle, compiler and linter.
 
 ```bash
-npm install -g truffle      // Version 4.1.5+ required.
-npm install -g solc         // Version 0.4.21+ required.
-npm install -g solium
+npm install -g truffle      // Version 4.1.7+ required.
+npm install -g solium       // Version 1.1.7+ required
 ```
 
 
@@ -110,7 +109,7 @@ npm install -g truffle-flattener
 Usage 
 
 ```bash
-truffle-flattener contracts/Migrations.sol >> dist/Migrations.sol
+truffle-flattener contracts/SampleContract.sol >> dist/SampleContract.sol
 ```
  
  

@@ -1,7 +1,7 @@
 {
   "name": "smart-contract-box",
   "version": "1.0.0",
-  "description": "",
+  "description": "A ready to go boilerplate for Smart Contracts creation",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
@@ -19,7 +19,7 @@
     "url": "https://github.com/paneedesign/smart-contract-box/issues"
   },
   "author": "paneedesign.com",
-  "authors": [
+  "contributors": [
     {
       "name": "Vittorio Minacori",
       "url": "https://github.com/vittominacori"
@@ -28,7 +28,7 @@
   "license": "MIT",
   "dependencies": {
     "truffle-contract": "^3.0.4",
-    "zeppelin-solidity": "1.8.0"
+    "openzeppelin-solidity": "1.9.0"
   },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",

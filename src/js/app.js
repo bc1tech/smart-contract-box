@@ -21,7 +21,7 @@ App = {
     },
 
     initContract: function () {
-        $.getJSON('Migrations.json', function(data) {
+        $.getJSON('SampleContract.json', function(data) {
             // Get the necessary contract artifact file and instantiate it with truffle-contract.
             App.contracts.SmartContractIstance = TruffleContract(data);
 
