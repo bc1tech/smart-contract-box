@@ -1,21 +1,27 @@
-pragma solidity ^0.4.23;
+pragma solidity ^0.4.24;
+
+import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
 
-contract SampleContract {
+contract SampleContract is Ownable {
     event WorkDone(uint256 value);
 
-    address public owner;
+    address public creator;
 
-    modifier restricted() {
-        require(msg.sender == owner, "Should be contract owner");
+    modifier onlyCreator() {
+        require(msg.sender == creator, "Should be contract creator");
         _;
     }
 
     constructor() public {
-        owner = msg.sender;
+        creator = owner;
     }
 
-    function doWork(uint256 _value) public restricted {
+    function creatorDoesWork(uint256 _value) public onlyCreator {
+        emit WorkDone(_value);
+    }
+
+    function ownerDoesWork(uint256 _value) public onlyOwner {
         emit WorkDone(_value);
     }
 }

@@ -1,5 +1,11 @@
 # Solidity Project
 
+[![Build Status](https://travis-ci.org/paneedesign/smart-contract-box.svg?branch=master)](https://travis-ci.org/paneedesign/smart-contract-box) 
+[![Coverage Status](https://coveralls.io/repos/github/paneedesign/smart-contract-box/badge.svg)](https://coveralls.io/github/paneedesign/smart-contract-box)
+
+
+A ready to go boilerplate for Smart Contracts creation.
+ 
 
 Code created using [Open Zeppelin (openzeppelin-solidity)](https://github.com/OpenZeppelin/openzeppelin-solidity) and [Truffle Framework](https://github.com/trufflesuite/truffle).
 
@@ -11,9 +17,11 @@ Code created using [Open Zeppelin (openzeppelin-solidity)](https://github.com/Op
 Install truffle, compiler and linter.
 
 ```bash
-npm install -g truffle      // Version 4.1.7+ required.
+npm install -g truffle      // Version 4.1.9+ required.
 npm install -g solium       // Version 1.1.7+ required
 ```
+
+Solidity version used: 0.4.24
 
 
 
@@ -118,7 +126,7 @@ truffle-flattener contracts/SampleContract.sol >> dist/SampleContract.sol
 
 Solidity [Doc](https://solidity.readthedocs.io) [Github](https://solidity.readthedocs.io)
 
-OpenZeppelin [Doc](http://zeppelin-solidity.readthedocs.io) [Github](https://github.com/OpenZeppelin)
+OpenZeppelin [Doc](https://openzeppelin.org/api/docs/open-zeppelin.html) [Github](https://github.com/OpenZeppelin)
 
 Truffle [Doc](http://truffleframework.com/docs) [Github](https://github.com/trufflesuite/truffle)
 

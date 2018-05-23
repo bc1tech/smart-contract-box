@@ -2,13 +2,31 @@
   "name": "smart-contract-box",
   "version": "1.0.0",
   "description": "A ready to go boilerplate for Smart Contracts creation",
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "smart",
+    "contracts",
+    "token",
+    "truffle",
+    "openzeppelin"
+  ],
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "dev": "lite-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "scripts/test.sh",
+    "lint": "eslint migrations test",
+    "lint:fix": "eslint migrations test --fix",
+    "lint:sol": "solium -d contracts",
+    "lint:sol:fix": "solium -d contracts --fix",
+    "lint:all": "npm run lint && npm run lint:sol",
+    "lint:all:fix": "npm run lint:fix && npm run lint:sol:fix",
+    "console": "truffle console",
+    "coverage": "scripts/coverage.sh",
+    "version": "scripts/version.js"
   },
   "repository": {
     "type": "git",
@@ -26,19 +44,30 @@
     }
   ],
   "license": "MIT",
-  "dependencies": {
-    "truffle-contract": "^3.0.4",
-    "openzeppelin-solidity": "1.9.0"
-  },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "chai-bignumber": "^2.0.2",
+    "coveralls": "^3.0.1",
+    "dotenv": "^5.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^12.0.0-alpha.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
     "ethereumjs-util": "^5.1.5",
+    "ethjs-abi": "^0.2.1",
+    "ganache-cli": "^6.1.0",
     "lite-server": "^2.3.0",
+    "openzeppelin-solidity": "^1.9.0",
+    "solidity-coverage": "^0.5.0",
+    "solium": "^1.1.7",
+    "truffle": "^4.1.9",
+    "truffle-contract": "^3.0.5",
     "yargs": "^11.0.0"
   }
 }
