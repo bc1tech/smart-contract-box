@@ -17,8 +17,8 @@ Code created using [Open Zeppelin (openzeppelin-solidity)](https://github.com/Op
 Install truffle, compiler and linter.
 
 ```bash
-npm install -g truffle      // Version 4.1.11+ required.
-npm install -g solium       // Version 1.1.7+ required
+npm install -g truffle      // Version 4.1.13+ required.
+npm install -g solium       // Version 1.1.8+ required
 ```
 
 Solidity version used: 0.4.24
@@ -45,7 +45,7 @@ solium -d contracts
 
 
 
-## Compile, migrate and test the contracts.
+## Compile, migrate and test the contracts
  
 
 Open the Truffle console
@@ -131,4 +131,3 @@ OpenZeppelin [Doc](https://openzeppelin.org/api/docs/open-zeppelin.html) [Github
 Truffle [Doc](http://truffleframework.com/docs) [Github](https://github.com/trufflesuite/truffle)
 
 Web3.js [Doc 0.20.4](https://github.com/ethereum/wiki/wiki/JavaScript-API) [Doc 1.0](http://web3js.readthedocs.io/en/1.0) [Github](https://github.com/ethereum/web3.js)
- 

@@ -63,10 +63,10 @@
     "ethjs-abi": "^0.2.1",
     "ganache-cli": "^6.1.0",
     "lite-server": "^2.3.0",
-    "openzeppelin-solidity": "^1.10.0",
+    "openzeppelin-solidity": "^1.11.0",
     "solidity-coverage": "^0.5.0",
-    "solium": "^1.1.7",
-    "truffle": "^4.1.11",
+    "solium": "^1.1.8",
+    "truffle": "^4.1.13",
     "truffle-contract": "^3.0.5",
     "yargs": "^11.0.0"
   }
