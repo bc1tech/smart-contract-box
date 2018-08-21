@@ -130,4 +130,4 @@ OpenZeppelin [Doc](https://openzeppelin.org/api/docs/open-zeppelin.html) [Github
 
 Truffle [Doc](http://truffleframework.com/docs) [Github](https://github.com/trufflesuite/truffle)
 
-Web3.js [Doc 0.20.4](https://github.com/ethereum/wiki/wiki/JavaScript-API) [Doc 1.0](http://web3js.readthedocs.io/en/1.0) [Github](https://github.com/ethereum/web3.js)
+Web3.js [Doc 0.20.6](https://github.com/ethereum/wiki/wiki/JavaScript-API) [Doc 1.0.*](http://web3js.readthedocs.io/en/1.0) [Github](https://github.com/ethereum/web3.js)
