@@ -5,36 +5,24 @@
 
 
 A ready to go boilerplate for Smart Contracts creation.
- 
 
 Code created using [Open Zeppelin (openzeppelin-solidity)](https://github.com/OpenZeppelin/openzeppelin-solidity) and [Truffle Framework](https://github.com/trufflesuite/truffle).
 
- 
- 
 ## Installation
-
 
 Install truffle.
 
 ```bash
-npm install -g truffle      // Version 4.1.13+ required.
+npm install -g truffle      // Version 4.1.14+ required.
 ```
 
-Solidity version used: 0.4.24
-
-
-
 ## Install dependencies
-
 
 ```bash
 npm install
 ```
 
-
-
 ## Linter
-
 
 Use Solium
 
@@ -42,17 +30,22 @@ Use Solium
 npm run lint:sol
 ```
 
-Lint and fix all
+Use ESLint
 
 ```bash
-npm run lint:all:fix
+npm run lint:js
 ```
 
+#### Note
 
+IMPORTANT: Before commit run the lint and fix command:
+
+```bash
+npm run lint:fix
+```
 
 ## Compile and test the contracts.
  
-
 Open the Truffle console
 
 ```bash
@@ -71,36 +64,19 @@ Test
 test
 ```
 
-
-
-## Run server
-
-
-Run the `liteserver` development server.
-
-```bash
-npm run dev
-```
-
-
-
 ## Optional
-
 
 Install the [truffle-flattener](https://github.com/alcuadrado/truffle-flattener)
 
 ```bash
 npm install -g truffle-flattener
 ```
- 
- 
+
 Usage 
 
 ```bash
 truffle-flattener contracts/SampleContract.sol >> dist/SampleContract.sol
 ```
- 
- 
  
 ## Links
 
