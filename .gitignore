@@ -29,9 +29,3 @@ build/
 
 # lol macs
 .DS_Store/
-
-# keystore files
-commands/keystore
-commands/input
-commands/output
-commands/logs
