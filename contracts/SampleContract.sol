@@ -2,26 +2,29 @@ pragma solidity ^0.4.24;
 
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
-
 contract SampleContract is Ownable {
   event WorkDone(uint256 value);
 
-  address public creator;
+  address private _creator;
 
   modifier onlyCreator() {
-    require(msg.sender == creator, "Should be contract creator");
+    require(msg.sender == _creator);
     _;
   }
 
   constructor() public {
-    creator = owner;
+    _creator = owner();
   }
 
-  function creatorDoesWork(uint256 _value) public onlyCreator {
-    emit WorkDone(_value);
+  function creator() public view returns(address) {
+    return _creator;
   }
 
-  function ownerDoesWork(uint256 _value) public onlyOwner {
-    emit WorkDone(_value);
+  function creatorDoesWork(uint256 value) public onlyCreator {
+    emit WorkDone(value);
+  }
+
+  function ownerDoesWork(uint256 value) public onlyOwner {
+    emit WorkDone(value);
   }
 }

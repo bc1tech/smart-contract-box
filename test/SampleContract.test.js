@@ -1,9 +1,8 @@
-const { assertRevert } = require('./helpers/assertRevert');
+const shouldFail = require('openzeppelin-solidity/test/helpers/shouldFail');
 
 const BigNumber = web3.BigNumber;
 
 require('chai')
-  .use(require('chai-as-promised'))
   .use(require('chai-bignumber')(BigNumber))
   .should();
 
@@ -38,7 +37,7 @@ contract('SampleContract', function ([creator, owner, anotherAccount]) {
 
     describe('if another account is calling', function () {
       it('reverts', async function () {
-        await assertRevert(this.contract.creatorDoesWork(value, { from: anotherAccount }));
+        await shouldFail.reverting(this.contract.creatorDoesWork(value, { from: anotherAccount }));
       });
     });
   });
@@ -59,7 +58,7 @@ contract('SampleContract', function ([creator, owner, anotherAccount]) {
 
     describe('if another account is calling', function () {
       it('reverts', async function () {
-        await assertRevert(this.contract.ownerDoesWork(value, { from: anotherAccount }));
+        await shouldFail.reverting(this.contract.ownerDoesWork(value, { from: anotherAccount }));
       });
     });
   });
