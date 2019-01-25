@@ -1,7 +1,7 @@
 # Smart Contract Box
 
-[![Build Status](https://travis-ci.org/paneedesign/smart-contract-box.svg?branch=master)](https://travis-ci.org/paneedesign/smart-contract-box) 
-[![Coverage Status](https://coveralls.io/repos/github/paneedesign/smart-contract-box/badge.svg)](https://coveralls.io/github/paneedesign/smart-contract-box)
+[![Build Status](https://travis-ci.org/bc1tech/smart-contract-box.svg?branch=master)](https://travis-ci.org/bc1tech/smart-contract-box) 
+[![Coverage Status](https://coveralls.io/repos/github/bc1tech/smart-contract-box/badge.svg)](https://coveralls.io/github/bc1tech/smart-contract-box)
 
 
 A ready to go boilerplate for Smart Contracts creation.
@@ -10,10 +10,12 @@ Code created using [Open Zeppelin (openzeppelin-solidity)](https://github.com/Op
 
 ## Development
 
-Install Truffle
+Install Truffle if you want to run your own node
+
+Version 4.1.15 required
 
 ```bash
-npm install -g truffle      // Version 4.1.14+ required.
+npm install -g truffle
 ```
 
 ### Install dependencies
@@ -24,7 +26,7 @@ npm install
 
 ### Linter
 
-Use Solium
+Use Ethlint
 
 ```bash
 npm run lint:sol
@@ -42,27 +44,35 @@ Use both and fix
 npm run lint:fix
 ```
 
-### Compile and test the contracts
+## Usage
  
-Open the Truffle console
+### Compile
 
 ```bash
-truffle develop
+npm run compile
 ```
 
-Compile 
+### Test 
 
 ```bash
-compile 
+npm run test 
 ```
 
-Test
+### Code Coverage
 
 ```bash
-test
+npm run coverage
+```
+
+### Profiling
+
+```bash
+npm run profile
 ```
 
 ## Optional
+
+### Flattener
 
 Install the [truffle-flattener](https://github.com/alcuadrado/truffle-flattener)
 
@@ -73,9 +83,9 @@ npm install -g truffle-flattener
 Usage 
 
 ```bash
-truffle-flattener contracts/SampleContract.sol >> dist/SampleContract.sol
+truffle-flattener contracts/SampleContract.sol > dist/SampleContract.sol
 ```
 
 ## License
 
-Code released under the [MIT License](https://github.com/paneedesign/smart-contract-box/blob/master/LICENSE).
+Code released under the [MIT License](https://github.com/bc1tech/solidity-starter-kit/blob/master/LICENSE).
