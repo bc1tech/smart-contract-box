@@ -16,7 +16,7 @@ contract SampleContract is Ownable {
     _creator = owner();
   }
 
-  function creator() public view returns(address) {
+  function creator() public view returns (address) {
     return _creator;
   }
 
