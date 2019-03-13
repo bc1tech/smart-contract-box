@@ -1,7 +1,7 @@
 {
   "extends": "default",
   "rules": {
-    "indent": ["error", 2],
+    "indent": ["error", 4],
 
     "bracket-align": false,
     "compiler-fixed": false,

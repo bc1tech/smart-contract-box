@@ -1,15 +1,11 @@
-const shouldFail = require('openzeppelin-solidity/test/helpers/shouldFail');
+const { BN, shouldFail } = require('openzeppelin-test-helpers');
 
-const BigNumber = web3.BigNumber;
-
-require('chai')
-  .use(require('chai-bignumber')(BigNumber))
-  .should();
+const { shouldBehaveLikeOwnable } = require('eth-token-recover/test/ownership/Ownable.behavior');
 
 const SampleContract = artifacts.require('SampleContract');
 
-contract('SampleContract', function ([creator, owner, anotherAccount]) {
-  const value = new BigNumber(1000);
+contract('SampleContract', function ([creator, newOwner, anotherAccount]) {
+  const value = new BN(1000);
 
   beforeEach(async function () {
     this.contract = await SampleContract.new({ from: creator });
@@ -25,7 +21,7 @@ contract('SampleContract', function ([creator, owner, anotherAccount]) {
     creator.should.equal(contractOwner);
   });
 
-  describe('calling the creatorDoesWork function', function () {
+  context('calling the creatorDoesWork function', function () {
     describe('if creator is calling', function () {
       it('emits a WorkDone event', async function () {
         const { logs } = await this.contract.creatorDoesWork(value, { from: creator });
@@ -42,14 +38,14 @@ contract('SampleContract', function ([creator, owner, anotherAccount]) {
     });
   });
 
-  describe('calling the ownerDoesWork function', function () {
+  context('calling the ownerDoesWork function', function () {
     beforeEach(async function () {
-      await this.contract.transferOwnership(owner, { from: creator });
+      await this.contract.transferOwnership(newOwner, { from: creator });
     });
 
     describe('if owner is calling', function () {
       it('emits a WorkDone event', async function () {
-        const { logs } = await this.contract.ownerDoesWork(value, { from: owner });
+        const { logs } = await this.contract.ownerDoesWork(value, { from: newOwner });
         assert.equal(logs.length, 1);
         assert.equal(logs[0].event, 'WorkDone');
         logs[0].args.value.should.be.bignumber.equal(value);
@@ -61,5 +57,13 @@ contract('SampleContract', function ([creator, owner, anotherAccount]) {
         await shouldFail.reverting(this.contract.ownerDoesWork(value, { from: anotherAccount }));
       });
     });
+  });
+
+  context('testing ownership', function () {
+    beforeEach(async function () {
+      this.ownable = this.contract;
+    });
+
+    shouldBehaveLikeOwnable(creator, [anotherAccount]);
   });
 });

@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/bc1tech/smart-contract-box.svg?branch=master)](https://travis-ci.org/bc1tech/smart-contract-box) 
 [![Coverage Status](https://coveralls.io/repos/github/bc1tech/smart-contract-box/badge.svg)](https://coveralls.io/github/bc1tech/smart-contract-box)
+[![MIT licensed](https://img.shields.io/github/license/bc1tech/smart-contract-box.svg)](https://github.com/bc1tech/smart-contract-box/blob/master/LICENSE)
 
 
 A ready to go boilerplate for Smart Contracts creation.
@@ -10,14 +11,6 @@ Code created using [Open Zeppelin (openzeppelin-solidity)](https://github.com/Op
 
 ## Development
 
-Install Truffle if you want to run your own node
-
-Version 4.1.15 required
-
-```bash
-npm install -g truffle@4.1.15
-```
-
 ### Install dependencies
 
 ```bash
@@ -25,7 +18,13 @@ npm install
 ```
 
 ## Usage
- 
+
+Open the Truffle console
+
+```bash
+npm run console
+```
+
 ### Compile
 
 ```bash

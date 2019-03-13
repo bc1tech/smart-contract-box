@@ -25,14 +25,14 @@ App = {
     return App.initContract();
   },
   initContract: function () {
-    $.getJSON('SampleContract.json', function(data) {
+    $.getJSON('SampleContract.json', function (data) {
       App.contracts.SmartContractIstance = TruffleContract(data);
       App.contracts.SmartContractIstance.setProvider(App.web3Provider);
     });
   },
 };
 
-$(function() {
+$(function () {
   $(window).load(function () {
     App.init();
   });
