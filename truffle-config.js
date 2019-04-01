@@ -1,3 +1,5 @@
+require('chai/register-should');
+
 module.exports = {
   networks: {
     development: {
@@ -15,13 +17,13 @@ module.exports = {
   },
   compilers: {
     solc: {
-      version: '0.5.5',
+      version: '0.5.7',
       settings: {
         optimizer: {
           enabled: true,
           runs: 200,
         },
-        evmVersion: 'petersburg',
+        // evmVersion: 'petersburg',
       },
     },
   },
