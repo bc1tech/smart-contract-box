@@ -109,4 +109,4 @@ The `mdreport` command creates a markdown description report with tables compris
 
 ## License
 
-Code released under the [MIT License](https://github.com/bc1tech/solidity-starter-kit/blob/master/LICENSE).
+Code released under the [MIT License](https://github.com/bc1tech/smart-contract-box/blob/master/LICENSE).
