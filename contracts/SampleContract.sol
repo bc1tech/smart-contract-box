@@ -1,8 +1,8 @@
-pragma solidity ^0.5.7;
+pragma solidity ^0.5.10;
 
-import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+import "eth-token-recover/contracts/TokenRecover.sol";
 
-contract SampleContract is Ownable {
+contract SampleContract is TokenRecover {
     event WorkDone(uint256 value);
 
     address private _creator;

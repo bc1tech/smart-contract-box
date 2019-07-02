@@ -1,6 +1,6 @@
-const { BN, shouldFail } = require('openzeppelin-test-helpers');
+const { BN, expectEvent, expectRevert } = require('openzeppelin-test-helpers');
 
-const { shouldBehaveLikeOwnable } = require('eth-token-recover/test/ownership/Ownable.behavior');
+const { shouldBehaveLikeTokenRecover } = require('eth-token-recover/test/TokenRecover.behaviour');
 
 const SampleContract = artifacts.require('SampleContract');
 
@@ -24,16 +24,17 @@ contract('SampleContract', function ([creator, newOwner, anotherAccount]) {
   context('calling the creatorDoesWork function', function () {
     describe('if creator is calling', function () {
       it('emits a WorkDone event', async function () {
-        const { logs } = await this.contract.creatorDoesWork(value, { from: creator });
-        assert.equal(logs.length, 1);
-        assert.equal(logs[0].event, 'WorkDone');
-        logs[0].args.value.should.be.bignumber.equal(value);
+        const receipt = await this.contract.creatorDoesWork(value, { from: creator });
+
+        await expectEvent.inTransaction(receipt.tx, SampleContract, 'WorkDone', {
+          value: value,
+        });
       });
     });
 
     describe('if another account is calling', function () {
       it('reverts', async function () {
-        await shouldFail.reverting(this.contract.creatorDoesWork(value, { from: anotherAccount }));
+        await expectRevert.unspecified(this.contract.creatorDoesWork(value, { from: anotherAccount }));
       });
     });
   });
@@ -45,25 +46,26 @@ contract('SampleContract', function ([creator, newOwner, anotherAccount]) {
 
     describe('if owner is calling', function () {
       it('emits a WorkDone event', async function () {
-        const { logs } = await this.contract.ownerDoesWork(value, { from: newOwner });
-        assert.equal(logs.length, 1);
-        assert.equal(logs[0].event, 'WorkDone');
-        logs[0].args.value.should.be.bignumber.equal(value);
+        const receipt = await this.contract.ownerDoesWork(value, { from: newOwner });
+
+        await expectEvent.inTransaction(receipt.tx, SampleContract, 'WorkDone', {
+          value: value,
+        });
       });
     });
 
     describe('if another account is calling', function () {
       it('reverts', async function () {
-        await shouldFail.reverting(this.contract.ownerDoesWork(value, { from: anotherAccount }));
+        await expectRevert.unspecified(this.contract.ownerDoesWork(value, { from: anotherAccount }));
       });
     });
   });
 
-  context('testing ownership', function () {
+  context('like a TokenRecover', function () {
     beforeEach(async function () {
-      this.ownable = this.contract;
+      this.instance = this.contract;
     });
 
-    shouldBehaveLikeOwnable(creator, [anotherAccount]);
+    shouldBehaveLikeTokenRecover([creator, anotherAccount]);
   });
 });
